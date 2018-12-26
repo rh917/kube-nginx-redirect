@@ -1,0 +1,11 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: test-domain
+  namespace: domain-redirects
+  annotations:
+    ingress.kubernetes.io/301-to: "https://www.google.com"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: "*.mediaframework.net"
